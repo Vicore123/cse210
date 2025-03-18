@@ -10,20 +10,27 @@ class Program
 
         string entry = "";
 
+        Console.Clear();
         Console.Write(reference.GetDisplayText());
         Console.WriteLine(scripture.GetDisplayText() + "\n");
         
-        Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+        Console.WriteLine("Hide more words: Press enter\nShow all Words: Press 1\nQuit: type 'quit'");
         entry = Console.ReadLine();
 
         while (entry != "quit" && !scripture.IsCompletelyHidden()) {
             
             Console.Clear();
-            scripture.HideRandomWords(3);
+            if (entry == "1") {
+                scripture.ShowAll();
+            }
+            else {
+                scripture.HideRandomWords(3);
+            }
+
             Console.Write(reference.GetDisplayText());
             Console.WriteLine(scripture.GetDisplayText() + "\n");
             
-            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            Console.WriteLine("Hide more words: Press enter\nShow all Words: Press 1\nQuit: type 'quit'");
             entry = Console.ReadLine();
         }
     }

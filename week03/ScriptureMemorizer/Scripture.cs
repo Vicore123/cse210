@@ -25,7 +25,6 @@ public class Scripture {
          }
       }
    }
-
    public string GetDisplayText() {
       string text = "";
       string underLines = "";
@@ -50,5 +49,10 @@ public class Scripture {
          }
       }
       return true;
+   }
+   public void ShowAll() {
+      foreach (Word word in _words) {
+         word.Show();
+      }
    }
 }
